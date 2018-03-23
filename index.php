@@ -4,12 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="./css/w3.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.11.0/sweetalert2.all.min.js"></script>
+  <link rel="stylesheet" href="./css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/ps.css">
     <link rel="stylesheet" href="./css/main.css">
 
-  <link href="https://fonts.googleapis.com/css?family=Hind" rel="stylesheet">
   <title>Prism</title>
   <style>
     h4 {
@@ -89,7 +87,6 @@ foreach($fileList as $filename){
 
 
 <script type="text/javascript" src="./js/perfect-scrollbar.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.1/ace.js"></script>
 <script src="./js/main.js"></script>
 </body>
 </html>

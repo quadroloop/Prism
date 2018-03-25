@@ -83,3 +83,12 @@ function view(url) {
   x.style.display = 'block';
   x.src = url;
 }
+
+function openEditor() {
+  var x = document.getElementById('samples');
+    var y = document.getElementById('editor');
+    x.style.display = 'none';
+    y.src = './Three.js/editor/index.html';
+    y.style.display = 'block';
+
+}

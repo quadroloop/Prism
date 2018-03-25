@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
+  <link rel="icon" href="./img/prism_logo.png">
   <link rel="stylesheet" href="./css/w3.css">
   <link rel="stylesheet" href="./css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/ps.css">
@@ -25,7 +26,7 @@
     </center>
   </a>
    <a id="tool_state" class="dark-border w3-round w3-padding-small w3-text-grey tool_state"><i class="fa fa-map w3-text-grey"></i> MENU</a>
-  <a onclick="call_editor();" class="w3-bar-item w3-button w3-hover-pale-green"><i class="fa fa-pencil w3-text-blue"></i> Editor</a>
+  <a href="./Three.js/editor/index.html" class="w3-bar-item w3-button w3-hover-pale-green"><i class="fa fa-pencil w3-text-blue"></i> Editor</a>
   <a onclick="getRoute();" class="w3-bar-item w3-button w3-hover-pale-green"><i class="fa fa-sitemap w3-text-green"></i> Get Route Link</a>
   <a onclick="viewroute();" class="w3-bar-item w3-button w3-hover-pale-green"><i class="fa fa-eye w3-text-amber"></i> View Route</a>
   <a onclick="restart();" class="w3-bar-item w3-button w3-hover-pale-green"><i class="fa fa-refresh w3-text-pink"></i> Reset Data</a>
@@ -54,25 +55,28 @@
   <center>
    <ul class="w3-ul w3-margin" id="samples">
   <?php
+   $i = 0;
   $fileList = glob('./Three.js/examples/*.html');
 foreach($fileList as $filename){
+     $i++;
+     if($i < 10){
     echo '
     <li class="w3-bar w3-hover-pale-blue" style="cursor:pointer" title="'.$filename.'" onclick="view(this.title)">
     <i  class="w3-bar-item fa fa-circle w3-text-light-green w3-margin w3-white w3-xlarge w3-right"></i>
      <i class="w3-bar-item fa fa-bars w3-margin w3-text-purple w3-white w3-xlarge w3-right"></i>
-      <img src="./img/'.rand(1,11).'.png" class="w3-bar-item w3-circle w3-hide-small" style="width:85px">
+      <iframe src="'.$filename.'" class="w3-bar-item w3-hide-small w3-card-2" style="width:450px;height:250px;border-radius:10px;"></iframe>
       <div class="w3-bar-item">
         <span class="w3-large w3-text-indigo">'.$filename.'</span><br>
         <span class="w3-text-grey">Three.js Animation File</span>
       </div>
     </li>
-
-    ';
+  ';
+   }
 }
 ?>
 </ul>
       <iframe src="" style="width:100vw;height:100vh;display: none;border: 0px;" id="viewer"></iframe>
-      <div id="editor" class="w3-card-4 w3-hide"></div>
+         <iframe src="" id="editor"></iframe>
         <div id="about">
           <h1>this is what it's about</h1>
         </div>  

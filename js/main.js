@@ -92,3 +92,28 @@ function openEditor() {
     y.style.display = 'block';
 
 }
+
+
+function paginate(page) {
+   axios.get(location.href+'/pager.php?page='+page)
+  .then(function (response) {
+    var panels = response.data;
+    document.getElementById('samples').innerHTML = '';
+    for(var i=0;i<panels.length;i++) {
+  document.getElementById('samples').innerHTML += '<li class="w3-bar w3-hover-pale-blue" style="cursor:pointer" title="'+panels[i]+'" onclick="view(this.title)">'+
+        '<i  class="w3-bar-item fa fa-circle w3-text-light-green w3-margin w3-white w3-xlarge w3-right"></i>'+
+         '<i class="w3-bar-item fa fa-bars w3-margin w3-text-purple w3-white w3-xlarge w3-right"></i>'+
+          '<iframe src="'+panels[i]+'" class="w3-bar-item w3-hide-small w3-card-2" style="width:450px;height:250px;border-radius:10px;"></iframe>'+
+          '<div class="w3-bar-item">'+
+            '<span class="w3-large w3-text-indigo">'+panels[i]+'</span><br>'+
+            '<span class="w3-text-grey">Three.js Animation File</span>'+
+          '</div>'+
+        '</li>';
+}
+
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+} 
+
